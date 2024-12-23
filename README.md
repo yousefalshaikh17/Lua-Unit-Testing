@@ -26,9 +26,26 @@ You can run your tests by executing the `run_tests.lua` script, which will autom
 
 ## Writing Unit Tests
 
-To write unit tests, create a Lua file inside the unit_tests/ directory. Here's an example of how to use the library and write unit tests.
+To write unit tests, create a Lua file inside the unit_tests/ directory. Instructions for writing unit tests can be found below.
+
+### 1. Set up the test environment
+- Use `SetBefore()` to prepare the test environment, such as initializing variables or tables that your test functions depend on.
+- Use `SetAfter()` to clean up any state or memory used during the test.
+- `SetBeforeEach()` and `SetAfterEach()` are also available and execute before and after each test.
+
+### 2. Define Test Cases
+- Use `addTest()` to define individual test cases.
+    - The function takes two arguments: test case name and test function.
+
+### 3. Validate Test Cases with Assertions
+- Use assertions to validate test cases. All assertions are documented in the next section.
+
+### 4. Run your tests
+- Use the `run_tests.lua` file to run the tests (or make your own). The control will provide output for each test result and will count the passes and failures.
 
 ## Example Unit Test
+
+Here's an example of how to use the library and write unit tests.
 ```lua
  local UnitTest = require("UnitTest")
  local sampleTests = UnitTest.new("Sample Unit Testing")
@@ -46,20 +63,6 @@ To write unit tests, create a Lua file inside the unit_tests/ directory. Here's 
 ```
 (A full version of this example can be found in `unit_tests/SampleTest.lua`)
 
-### Set up the test environment
-- Use `SetBefore()` to prepare the test environment, such as initializing variables or tables that your test functions depend on.
-- Use `SetAfter()` to clean up any state or memory used during the test.
-- `SetBeforeEach()` and `SetAfterEach()` are also available and execute before and after each test.
-
-### Define Test Cases
-- Use `addTest()` to define individual test cases.
-    - The function takes two arguments: test case name and test function.
-
-### Validate Test Cases with Assertions
-- Use assertions to validate test cases. All assertions are documented in the next section.
-
-### Run your tests
-- Use the `run_tests.lua` file to run the tests (or make your own). The control will provide output for each test result and will count the passes and failures.
 
 ## Assertions
 The library supports a wide range of assertions to test different aspects of your Lua code. Here's an overview of the available assertions provided by the library:
