@@ -1,6 +1,6 @@
 # Lua Unit Testing Library
 
-This is a Lua-based unit testing library that provides various assertions to help you test your Lua code. It includes basic and advanced assertions, including support for testing table equality, number comparison with epsilon, checking for errors, and more.
+This is a Lua-based unit testing library that provides various assertions to help you test your Lua code. It includes basic and advanced assertions, including support for testing table equality, number comparison with epsilon, checking for errors, and more. This is also compatible with Luau.
 
 ## Features
 
@@ -14,7 +14,7 @@ To use this library, simply clone the repository or download the necessary files
 
 1. Clone this repository:
    ```bash
-   git clone yousefalshaikh17/Lua-Unit-Testing
+   git clone yousefalshaikh17/lua-unit-testing-library
    ```
 2. Include the `lib/` directory in your Lua project's path, or copy the contents of lib/ into your project. Feel free to remove the samples.
 
@@ -30,19 +30,19 @@ To write unit tests, create a Lua file inside the unit_tests/ directory. Here's 
 
 ## Example Unit Test
 ```lua
-    local UnitTest = require("UnitTest")
-    local sampleTests = UnitTest.new("Sample Unit Testing")
+ local UnitTest = require("UnitTest")
+ local sampleTests = UnitTest.new("Sample Unit Testing")
 
-    local getSum = require("lib.sample_functions.getSum")
+ local getSum = require("lib.sample_functions.getSum")
 
-    sampleTests:addTest("math sum test", function()
-        local numbers = {4,2,6,3}
-        local calculatedSum = getSum(numbers)
-        local actualSum = 15
-        sampleTests:assertEqual(actualSum, calculatedSum, "The calculated sum is incorrect.")
-    end)
+ sampleTests:addTest("math sum test", function()
+     local numbers = {4,2,6,3}
+     local calculatedSum = getSum(numbers)
+     local actualSum = 15
+     sampleTests:assertEqual(actualSum, calculatedSum, "The calculated sum is incorrect.")
+ end)
 
-    return sampleTests
+ return sampleTests
 ```
 (A full version of this example can be found in `unit_tests/SampleTest.lua`)
 
@@ -81,13 +81,13 @@ The library supports a wide range of assertions to test different aspects of you
 
 This example demonstrates how you can use `assertTableEqual ` and `assertTableAlmostEqual` in unit tests.
 ```lua
-    local table1 = {1, 2, 3}
-    local table2 = {1, 2, 3}
-    Assertions:assertTableEqual(table1, table2, "Tables should be equal.")
+ local table1 = {1, 2, 3}
+ local table2 = {1, 2, 3}
+ Assertions:assertTableEqual(table1, table2, "Tables should be equal.")
 
-    local table1 = {1.0, 2.0, 3.0}
-    local table2 = {1.01, 2.01, 3.01}
-    Assertions:assertTableAlmostEqual(table1, table2, 0.02, "Tables should be almost equal with epsilon 0.02.")
+ local table1 = {1.0, 2.0, 3.0}
+ local table2 = {1.01, 2.01, 3.01}
+ Assertions:assertTableAlmostEqual(table1, table2, 0.02, "Tables should be almost equal with epsilon 0.02.")
 ```
 
 ## License
@@ -99,9 +99,8 @@ This project is licensed under the MIT License – see the `LICENSE` file for de
 Contributions are welcome! If you have any suggestions, bug reports, or improvements, feel free to open an issue or submit a pull request.
 
 ### How to Contribute
-
-    1. Fork the repository
-    2. Create a new branch for your changes
-    3. Commit your changes
-    4. Push to the branch
-    5. Create a pull request
+ 1. Fork the repository
+ 2. Create a new branch for your changes
+ 3. Commit your changes
+ 4. Push to the branch
+ 5. Create a pull request
