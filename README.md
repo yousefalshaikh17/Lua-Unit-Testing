@@ -14,7 +14,7 @@ To use this library, simply clone the repository or download the necessary files
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/lua-unit-testing-library.git
+   git clone yousefalshaikh17/Lua-Unit-Testing
    ```
 2. Include the `lib/` directory in your Lua project's path, or copy the contents of lib/ into your project. Feel free to remove the samples.
 
